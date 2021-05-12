@@ -1,5 +1,5 @@
 # ServicioAQP
-Proyecto de mejora del Sotware ServiAQP
+Proyecto de mejora del Sotware ServicioAQP
 Trabajo Realizado en el Curso de Gestion de Emprendimiento de la Universidad Nacional de San Agustin
 ## Getting Started
 Iniciamos este trabajo en el curso de pruebas de software
