@@ -14,7 +14,8 @@ include('../../includes/data_base.php');
     $preguntas      = nl2br($_POST['preguntas']);
     $categoria      = $_POST['categoria'];
     $subcategoria   = $_POST['subcategoria'];
-    
+    $user = 75;   
+    echo "Hola"; 
     $query ="INSERT INTO `servicio`( `SerUsuID`, `SerCatID`, `SerSubCatID`, `SerPreFre`, `SerDes`, `SerNom`, `SerPre`) 
         VALUES ($user,$categoria,$subcategoria,'$preguntas','$descripcion','$nombre',$precio)";
     if(mysqli_query($conn,$query)){

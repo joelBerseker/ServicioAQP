@@ -82,13 +82,14 @@ $(document).ready(function(){
     });
     $('#categoria').on('change',function(){
         var categoriaID= $(this).val();
+        alert("estamos aqui "+categoriaID);
         if(categoria){
             $.ajax({
                 url: "/ServicioAQP/servicios/recargables/ajaxSubcategoria.php",
                 type: "POST",
                 data:'categoria='+categoriaID,
                 success:function(html){
-
+                    alert("estamos aquix2 "+ categoriaID);
                     $('#subcategoria').html(html);
                     
                 }

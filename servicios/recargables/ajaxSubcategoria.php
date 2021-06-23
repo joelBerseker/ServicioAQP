@@ -8,7 +8,7 @@
                 echo '<option value="'.$row['SubCatId'].'">'.$row['SubCatNom'].'</option>';
             }
         }else{
-            echo '<option value="">Municipio no disponible</option>';
+            echo '<option value="">Categoria no valida no disponible</option>';
         }
     }
 ?>

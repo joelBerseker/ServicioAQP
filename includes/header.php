@@ -9,7 +9,7 @@ include('data_base.php');
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<title><?= $titulo_html ?> - ServicioAQP</title>
+	<title><?= $titulo_html ?> - ServiPeru</title>
 
 	<link rel="stylesheet" type="text/css" href="<?= $dirEjec ?>/frontend/bootstrap-4.5.0-dist/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="<?= $dirEjec ?>/frontend/css/style.css">
