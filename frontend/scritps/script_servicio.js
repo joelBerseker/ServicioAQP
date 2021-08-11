@@ -63,7 +63,7 @@ $(document).ready(function(){
                 formData.append('imagenes[]', file, file.name);
             }
             $.ajax({
-                url: "/ServicioAQP/servicios/crud_servicio/save.php",
+                url: "/ServiAQP/servicios/crud_servicio/save.php",
                 type: "POST",
                 dataType: "html",
                 data: formData,
@@ -72,7 +72,7 @@ $(document).ready(function(){
                 processData: false,
                 success:function(respuesta){
                 $("#formServicio")[0].reset();
-                $('#recargaTablaServicio').load('/ServicioAQP/servicios/recargables/TablaServicios.php');
+                $('#recargaTablaServicio').load('/ServiAQP/servicios/recargables/TablaServicios.php');
                 $('#exampleModal').modal('hide');
                 $("#exampleModal .close").click()
                 }
@@ -82,14 +82,13 @@ $(document).ready(function(){
     });
     $('#categoria').on('change',function(){
         var categoriaID= $(this).val();
-        alert("estamos aqui "+categoriaID);
         if(categoria){
             $.ajax({
-                url: "/ServicioAQP/servicios/recargables/ajaxSubcategoria.php",
+                url: "/ServiAQP/servicios/recargables/ajaxSubcategoria.php",
                 type: "POST",
                 data:'categoria='+categoriaID,
                 success:function(html){
-                    alert("estamos aquix2 "+ categoriaID);
+
                     $('#subcategoria').html(html);
                     
                 }
@@ -103,13 +102,13 @@ $(document).ready(function(){
  function eliminarServicio(idRecibido){
     if(confirm("Seguro que desea eliminar? id= "+idRecibido)){
         $.ajax({
-            url: "/ServicioAQP/servicios/crud_servicio/delete.php",
+            url: "/ServiAQP/servicios/crud_servicio/delete.php",
             type: "POST",
             data:'id='+idRecibido,
             success:function(enviado)
             {   
                 if(enviado){
-                    $('#recargaTablaServicio').load('/ServicioAQP/servicios/recargables/TablaServicios.php');
+                    $('#recargaTablaServicio').load('/ServiAQP/servicios/recargables/TablaServicios.php');
                 }
                 else{
                     alert("No se Elimino");
@@ -124,13 +123,13 @@ $(document).ready(function(){
  function eliminarS(idRecibido,iduser){
     if(confirm("Seguro que desea eliminar? id= "+idRecibido)){
         $.ajax({
-            url: "/ServicioAQP/servicios/crud_servicio/delete.php",
+            url: "/ServiAQP/servicios/crud_servicio/delete.php",
             type: "POST",
             data:'id='+idRecibido,
             success:function(enviado)
             {   
                 if(enviado){
-                    $('#recargarusuario').load('/ServicioAQP/usuario/view/publicados.php',{"id":iduser});
+                    $('#recargarusuario').load('/ServiAQP/usuario/view/publicados.php',{"id":iduser});
                 }
                 else
                     alert("No se Elimino")
@@ -144,15 +143,15 @@ $(document).ready(function(){
  function EliminarA(idRecibido,iduser){
     if(confirm("Seguro que desea eliminar? id= "+idRecibido)){
         $.ajax({
-            url: "/ServicioAQP/servicios/eliminar/deleteA.php",
+            url: "/ServiAQP/servicios/eliminar/deleteA.php",
             type: "POST",
             data:'id='+idRecibido,
             success:function(enviado)
             {   
                 if(enviado){
-                    $('#recargarusuario').load('/ServicioAQP/usuario/view/adquiridos.php',{"id":iduser});
+                    $('#recargarusuario').load('/ServiAQP/usuario/view/adquiridos.php',{"id":iduser});
                     alert("Eliminado de Adquiridos");
-                    //$('#recargaTablaServicio').load('/ServicioAQP/servicios/recargables/TablaServicios.php');
+                    //$('#recargaTablaServicio').load('/ServiAQP/servicios/recargables/TablaServicios.php');
                 }
                 else
                     alert("No se Elimino")
@@ -166,13 +165,13 @@ $(document).ready(function(){
  function EliminarF(idRecibido,iduser){
     if(confirm("Seguro que desea eliminar? id= "+idRecibido)){
         $.ajax({
-            url: "/ServicioAQP/servicios/eliminar/deleteF.php",
+            url: "/ServiAQP/servicios/eliminar/deleteF.php",
             type: "POST",
             data:'id='+idRecibido,
             success:function(enviado)
             {   
                 if(enviado){
-                    $('#recargarusuario').load('/ServicioAQP/usuario/view/favoritos.php',{"id":iduser});
+                    $('#recargarusuario').load('/ServiAQP/usuario/view/favoritos.php',{"id":iduser});
                    alert("Eliminado de favoritos");
                    
                 }
@@ -191,8 +190,8 @@ $(document).ready(function(){
     var formData= new FormData(document.getElementById('formCalificacion'));
     
     $.ajax({
-        //C:\xampp\htdocs\ServicioAQP\servicios\view\calificar.php
-        url: "/ServicioAQP/servicios/view/calificar.php",
+        //C:\xampp\htdocs\ServiAQP\servicios\view\calificar.php
+        url: "/ServiAQP/servicios/view/calificar.php",
         type: "POST",
         data: formData,
         processData: false,
@@ -206,14 +205,14 @@ $(document).ready(function(){
     var id =document.getElementById('idServicio');
     var formData= new FormData(document.getElementById('FormComentario'));
     $.ajax({
-        url: "/ServicioAQP/servicios/view/Addcomentario.php",
+        url: "/ServiAQP/servicios/view/Addcomentario.php",
         type: "POST",
         data: formData,
         processData: false,
         contentType: false,
         success:function(respuesta){
             //alert(respuesta);
-            $('#Comentario').load('/ServicioAQP/servicios/view/comentarios.php',{"id":id.value});
+            $('#Comentario').load('/ServiAQP/servicios/view/comentarios.php',{"id":id.value});
         }
         
     });
@@ -221,14 +220,14 @@ $(document).ready(function(){
     return false;
  }
 function filtrarC(idCat){   
-    $('#subcategorias').load('/ServicioAQP/servicios/recargables/subcategoria.php',{"idCat":idCat});
-    $('#ServicioCard').load('/ServicioAQP/servicios/recargables/ServiciosCard.php',{"idCat":idCat});
+    $('#subcategorias').load('/ServiAQP/servicios/recargables/subcategoria.php',{"idCat":idCat});
+    $('#ServicioCard').load('/ServiAQP/servicios/recargables/ServiciosCard.php',{"idCat":idCat});
     $('.filc').removeClass("bm_select");
     $('#filc'+idCat).addClass("bm_select");
     return false;
 }
 function filtrarSC(idSubCat,idCat){   
-    $('#ServicioCard').load('/ServicioAQP/servicios/recargables/ServiciosCard.php',{"idCat":idCat,"idCatSub":idSubCat});
+    $('#ServicioCard').load('/ServiAQP/servicios/recargables/ServiciosCard.php',{"idCat":idCat,"idCatSub":idSubCat});
     $('.filsc').removeClass("bm_select");
     $('#filsc'+idSubCat).addClass("bm_select");
     return false;
@@ -236,7 +235,7 @@ function filtrarSC(idSubCat,idCat){
 function favoritos(idSer){
     var data = "servicio="+idSer;
     $.ajax({
-        url: "/ServicioAQP/servicios/view/AddFavorito.php",
+        url: "/ServiAQP/servicios/view/AddFavorito.php",
         type: "POST",
         data: data,
         success:function(respuesta){
@@ -250,7 +249,7 @@ function favoritos(idSer){
 function adquirir(idSer){
     var data = "servicio="+idSer;
     $.ajax({
-        url: "/ServicioAQP/servicios/view/AddServicio.php",
+        url: "/ServiAQP/servicios/view/AddServicio.php",
         type: "POST",
         data: data,
         success:function(respuesta){
@@ -264,7 +263,7 @@ function reportar(){
     var id =document.getElementById('idServicio');
     var formData= new FormData(document.getElementById('formReport'));
     $.ajax({
-        url: "/ServicioAQP/servicios/view/AddReport.php",
+        url: "/ServiAQP/servicios/view/AddReport.php",
         type: "POST",
         data: formData,
         processData: false,
@@ -280,7 +279,7 @@ function notificar(){
     var id =document.getElementById('idServicio');
     var formData= new FormData(document.getElementById('formNoticacion'));
     $.ajax({
-        url: "/ServicioAQP/servicios/view/Addnotificaciones.php",
+        url: "/ServiAQP/servicios/view/Addnotificaciones.php",
         type: "POST",
         data: formData,
         processData: false,

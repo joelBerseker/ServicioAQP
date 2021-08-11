@@ -47,7 +47,7 @@ $nom_subcategoria = $_GET["scn"];
 					if ($row2 = mysqli_fetch_array($result)) {
 						$dirImg = trim($row2[0]);
 					}
-					$dirFin = '/ServicioAQP/servicios/img/' . $dirImg;
+					$dirFin = '/ServiAQP/servicios/img/' . $dirImg;
 					$id = $row['SerID'];
 					if (isset($user)) {
 						$user1       = $user['UsuID'];
@@ -99,7 +99,7 @@ $nom_subcategoria = $_GET["scn"];
 								<hr class="pt-0 mt-0 mb-1">
 								<textarea disabled class="descrip text-center"><?= $row['SerDes'] ?></textarea>
 								<hr class="pt-0 mt-0 mb-2">
-								<a href="/ServicioAQP/servicios/view/?id=<?= $row['SerID'] ?>" class="float-right btn btn-primary btn-sm ml-1"><em class="fas fa-chevron-right"></em></a>
+								<a href="/ServiAQP/servicios/view/?id=<?= $row['SerID'] ?>" class="float-right btn btn-primary btn-sm ml-1"><em class="fas fa-chevron-right"></em></a>
 								<?php if (!empty($user)) : ?>
 									<a class="float-right btn btn-primary btn-sm ml-1 ani_heart fav_<?= $row['SerID'] ?> <?php if ($totalF > 0) echo "heart_select" ?>" onclick="favoritos(<?= $row['SerID'] ?>)"><em class="fas fa-heart"></em></a>
 								<?php endif; ?>

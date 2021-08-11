@@ -23,13 +23,13 @@ function enviarMensaje() {
     var id = document.getElementById("creador");
     var formData = new FormData(document.getElementById("FormMensaje"));
     $.ajax({
-      url: "/ServicioAQP/chat/save.php",
+      url: "/ServiAQP/chat/save.php",
       type: "POST",
       data: formData,
       processData: false,
       contentType: false,
       success: function (respuesta) {
-        $("#chatsergio").load("/ServicioAQP/chat/aja.php", { creador: id.value });
+        $("#chatsergio").load("/ServiAQP/chat/aja.php", { creador: id.value });
       },
     });
     $("#FormMensaje")[0].reset();
@@ -41,7 +41,7 @@ var timestamp2 = 0;
 function chat_push(creador) {
   
   $.ajax({
-    url: "/ServicioAQP/includes/chat_push.php",
+    url: "/ServiAQP/includes/chat_push.php",
     type: "POST",
     data: "&timestamp2=" + timestamp2 +"&creador="+creador,
     dataType: "html",
@@ -52,7 +52,7 @@ function chat_push(creador) {
       if (actualizar == 1) {
         
         var id = document.getElementById("creador");
-        $("#chatsergio").load("/ServicioAQP/chat/aja.php", { creador: id.value });
+        $("#chatsergio").load("/ServiAQP/chat/aja.php", { creador: id.value });
       }
      
       

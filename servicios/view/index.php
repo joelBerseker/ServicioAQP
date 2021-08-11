@@ -84,7 +84,7 @@ include("../../includes/data_base.php");
                             <div class="carousel-inner">
                                 <?php
                                 foreach ($arrayImg as $clave => $valor) {
-                                    $dirFin = '/ServicioAQP/servicios/img/' . $valor['nombre'];
+                                    $dirFin = '/ServiAQP/servicios/img/' . $valor['nombre'];
                                 ?>
                                     <div class="carousel-item <?php if ($clave == 0) echo "active" ?>">
                                         <!-- <img class="d-block w-100" src="<?= $dirFin ?>" alt="slide <?= $clave ?>"> -->
@@ -163,7 +163,7 @@ include("../../includes/data_base.php");
                             <div class="col">
                                 <p class="card-text ">
                                     <small class="text-muted">
-                                        Creado por <a href="/ServicioAQP/usuario/view/?id=<?= $creador?>"><?= $creadorN ?></a>
+                                        Creado por <a href="/ServiAQP/usuario/view/?id=<?= $creador?>"><?= $creadorN ?></a>
                                     </small>
                                 </p>
                             </div>
@@ -210,7 +210,7 @@ include("../../includes/data_base.php");
                                 } else { ?>
                                     <button type="button" class="btn btn-outline-danger btn-sm float-right" data-toggle="modal" data-target="#reportModal" data-whatever="@mdo">Reportar</button>
                                     <button href="#" class="btn btn-primary btn-sm <?php if ($totalA > 0) echo "btn-disabled" ?>" <?php if ($totalA > 0) echo "disabled" ?> onclick="adquirir(<?= $id ?>)">Adquirir por S/. <?= $precio ?></button>
-                                    <a href="/ServicioAQP/usuario/view/?id=<?=$user['UsuID']?>&opcion=6&creador=<?= $creador ?>" class="btn btn-primary btn-sm"><i class="fas fa-comment"></i> Contactar</a>
+                                    <a href="/ServiAQP/usuario/view/?id=<?=$user['UsuID']?>&opcion=6&creador=<?= $creador ?>" class="btn btn-primary btn-sm"><i class="fas fa-comment"></i> Contactar</a>
                             <?php }
                             }
                             ?>

@@ -1,6 +1,6 @@
-# ServiPeru
-Proyecto de mejora del Sotware ServiPeru
-Trabajo Realizado en el Curso de Gestion de Emprendimiento de la Universidad Nacional de San Agustin
+# ServiAQP
+Trabajo de Pruebas de Software
+
 ## Getting Started
 Iniciamos este trabajo en el curso de pruebas de software
 ## Authors

@@ -21,7 +21,7 @@ $query = "SELECT * FROM `Servicio_comentario` where SerComSerID = $idPag order b
 $resultProduct = mysqli_query($conn2, $query);
 if (mysqli_num_rows($resultProduct) > 0) {
     while ($row = mysqli_fetch_array($resultProduct)) {
-        $dirFin = '/ServicioAQP/usuario/img/' . $row['UsuImgNom'];
+        $dirFin = '/ServiAQP/usuario/img/' . $row['UsuImgNom'];
 ?>
         <div class=" mb-3 ">
             <div class="row no-gutters">

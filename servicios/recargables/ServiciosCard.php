@@ -28,7 +28,7 @@
             if ($row2 = mysqli_fetch_array($result)) {
                 $dirImg = trim($row2[0]);
             }
-            $dirFin = '/ServicioAQP/servicios/img/' . $dirImg;
+            $dirFin = '/ServiAQP/servicios/img/' . $dirImg;
             $id = $row['SerID'];
             if (isset($user)) {
                 $user1       = $user['UsuID'];

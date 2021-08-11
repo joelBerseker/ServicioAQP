@@ -1,6 +1,6 @@
 function notification_display() {
   $.ajax({
-    url: "/ServicioAQP/includes/notification.php",
+    url: "/ServiAQP/includes/notification.php",
     type: "POST",
     processData: false,
     success: function (data) {
@@ -30,7 +30,7 @@ var timestamp = 0;
 
 function notification_push() {
   $.ajax({
-    url: "/ServicioAQP/includes/notification_push.php",
+    url: "/ServiAQP/includes/notification_push.php",
     type: "POST",
     data: "&timestamp=" + timestamp,
     dataType: "html",
@@ -101,7 +101,7 @@ function eliminarElemento(id) {
 
 function edit_rol(id) {
   $.ajax({
-    url: "/ServicioAQP/rol/crud_rol/edit.php",
+    url: "/ServiAQP/rol/crud_rol/edit.php",
     type: "GET",
     data: "&id=" + id,
     dataType: "html",
@@ -130,7 +130,7 @@ function edit_rol(id) {
 
 function edit_acceso(id) {
   $.ajax({
-    url: "/ServicioAQP/acceso/crud_acceso/edit.php",
+    url: "/ServiAQP/acceso/crud_acceso/edit.php",
     type: "GET",
     data: "&id=" + id,
     dataType: "html",
@@ -159,7 +159,7 @@ function edit_acceso(id) {
 
 function edit_recurso(id) {
   $.ajax({
-    url: "/ServicioAQP/recurso/crud_recurso/edit.php",
+    url: "/ServiAQP/recurso/crud_recurso/edit.php",
     type: "GET",
     data: "&id=" + id,
     dataType: "html",
@@ -188,7 +188,7 @@ function edit_recurso(id) {
 
 function edit_usuario(id) {
   $.ajax({
-    url: "/ServicioAQP/usuario/crud_usuario/edit.php",
+    url: "/ServiAQP/usuario/crud_usuario/edit.php",
     type: "GET",
     data: "&id=" + id,
     dataType: "html",
@@ -217,7 +217,7 @@ function edit_usuario(id) {
 
 function edit_usuario2(id) {
   $.ajax({
-    url: "/ServicioAQP/usuario/view/edit.php",
+    url: "/ServiAQP/usuario/view/edit.php",
     type: "GET",
     data: "&id=" + id,
     dataType: "html",
@@ -246,7 +246,7 @@ function edit_usuario2(id) {
 
 function edit_categoria(id) {
   $.ajax({
-    url: "/ServicioAQP/categorias/crud_categoria/edit.php",
+    url: "/ServiAQP/categorias/crud_categoria/edit.php",
     type: "GET",
     data: "&id=" + id,
     dataType: "html",
@@ -273,9 +273,9 @@ function edit_categoria(id) {
   });
 }
 
-function edit_Serviciocio(id) {
+function edit_servicio(id) {
   $.ajax({
-    url: "/ServicioAQP/servicios/crud_servicio/edit.php",
+    url: "/ServiAQP/servicios/crud_servicio/edit.php",
     type: "GET",
     data: "&id=" + id,
     dataType: "html",
@@ -303,7 +303,7 @@ function edit_Serviciocio(id) {
 }
 function edit_subcategoria(id) {
   $.ajax({
-    url: "/ServicioAQP/subcategorias/crud_subcategoria/edit.php",
+    url: "/ServiAQP/subcategorias/crud_subcategoria/edit.php",
     type: "GET",
     data: "&id=" + id,
     dataType: "html",
@@ -331,7 +331,7 @@ function edit_subcategoria(id) {
 }
 function noti(id) {
   $.ajax({
-    url: "/ServicioAQP/usuario/view/notificaciones.php",
+    url: "/ServiAQP/usuario/view/notificaciones.php",
     type: "GET",
     data: "&id=" + id,
     dataType: "html",
@@ -363,7 +363,7 @@ function noti(id) {
 
 function favo(id) {
   $.ajax({
-    url: "/ServicioAQP/usuario/view/favoritos.php",
+    url: "/ServiAQP/usuario/view/favoritos.php",
     type: "GET",
     data: "&id=" + id,
     dataType: "html",
@@ -393,7 +393,7 @@ function favo(id) {
 }
 function adqu(id) {
   $.ajax({
-    url: "/ServicioAQP/usuario/view/adquiridos.php",
+    url: "/ServiAQP/usuario/view/adquiridos.php",
     type: "GET",
     data: "&id=" + id,
     dataType: "html",
@@ -424,7 +424,7 @@ function adqu(id) {
 }
 function publ(id) {
   $.ajax({
-    url: "/ServicioAQP/usuario/view/publicados.php",
+    url: "/ServiAQP/usuario/view/publicados.php",
     type: "GET",
     data: "&id=" + id,
     dataType: "html",
@@ -456,7 +456,7 @@ function publ(id) {
 
 function chat() {
   $.ajax({
-    url: "/ServicioAQP/chat/chats.php",
+    url: "/ServiAQP/chat/chats.php",
     type: "GET",
     dataType: "html",
     success: function (data) {
@@ -487,7 +487,7 @@ function chat() {
 
 function conver(creador) {
   $.ajax({
-    url: "/ServicioAQP/chat/index.php",
+    url: "/ServiAQP/chat/index.php",
     type: "GET",
     data: "&creador=" + creador +"&leido=1",
     dataType: "html",
